@@ -1,4 +1,3 @@
 Public class Animal
 {
-
 }
