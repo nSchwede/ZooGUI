@@ -1,4 +1,4 @@
-public class MoveWithWalk implements MoveBehavior
+public class Walk implements MoveBehavior
 {
     @Override
     public void move()

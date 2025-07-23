@@ -1,4 +1,4 @@
-public class DietWithCarnivore implements DietBehavior
+public class Insectivore implements DietBehavior
 {
     @Override
     public void eat()

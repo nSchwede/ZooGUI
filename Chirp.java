@@ -1,4 +1,4 @@
-public class SoundWithSilent implements SoundBehavior
+public class Chirp implements SoundBehavior
 {
 
     @Override

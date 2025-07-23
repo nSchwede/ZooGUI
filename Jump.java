@@ -1,8 +1,9 @@
-public class MoveWithFly implements MoveBehavior
+public class Jump implements MoveBehavior
 {
     @Override
     public void move()
     {
         
     }
+
 }

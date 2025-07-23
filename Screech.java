@@ -1,10 +1,8 @@
-public class SoundWithChirp implements SoundBehavior
+public class Screech implements SoundBehavior
 {
-
     @Override
     public void sound()
     {
         
     }
-
 }

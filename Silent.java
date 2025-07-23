@@ -1,8 +1,10 @@
-public class SoundWithRoar implements SoundBehavior
+public class Silent implements SoundBehavior
 {
+
     @Override
     public void sound()
     {
         
     }
+
 }

@@ -1,4 +1,4 @@
-public class MoveWithSwim implements MoveBehavior
+public class Swim implements MoveBehavior
 {
 
      @Override

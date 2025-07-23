@@ -1,4 +1,4 @@
-public class SoundWithBark implements SoundBehavior
+public class Bark implements SoundBehavior
 {
 
     @Override
