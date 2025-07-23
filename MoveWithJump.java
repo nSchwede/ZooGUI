@@ -1,4 +1,4 @@
-public void MoveWithJump implements MoveBehavior
+public class MoveWithJump implements MoveBehavior
 {
     @Override
     public void performMove()

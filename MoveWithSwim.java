@@ -1,4 +1,4 @@
-public void MoveWithSwim implements MoveBehavior
+public class MoveWithSwim implements MoveBehavior
 {
 
     @Override
@@ -6,5 +6,5 @@ public void MoveWithSwim implements MoveBehavior
     {
         
     }
-    
+
 }

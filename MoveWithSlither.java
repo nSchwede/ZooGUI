@@ -1,4 +1,4 @@
-public void MoveWithSlither implements MoveBehavior
+public class MoveWithSlither implements MoveBehavior
 {
 
     @Override

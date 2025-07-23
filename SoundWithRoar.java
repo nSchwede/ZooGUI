@@ -1,4 +1,4 @@
-public void SoundWithRoar implements SoundBehavior
+public class SoundWithRoar implements SoundBehavior
 {
     @Override
     public void performSound()
