@@ -1,4 +1,5 @@
-Public class Scorpion extends Animal
+public class Scorpion extends Animal 
 {
+    
     
 }

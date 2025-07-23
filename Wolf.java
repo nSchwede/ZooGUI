@@ -1,4 +1,5 @@
-Public class Wolf extends Animal
+public class Wolf extends Animal 
 {
+    
 
 }

@@ -1,4 +1,4 @@
-Public class Snake extends Animal
+public class Snake extends Animal 
 {
-    
+   
 }

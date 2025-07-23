@@ -1,4 +1,6 @@
-Public class BrownBear extends Animal
+public class BrownBear extends Animal
 {
+    
+
 
 }

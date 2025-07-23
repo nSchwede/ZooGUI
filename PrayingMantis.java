@@ -1,4 +1,5 @@
-Public class PrayingMantis extends Animal
+public class PrayingMantis extends Animal 
 {
+    
     
 }

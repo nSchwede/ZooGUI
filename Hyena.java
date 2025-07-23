@@ -1,4 +1,6 @@
-Public class Hyena extends Animal
+public class Hyena extends Animal  
 {
-    
+
 }
+   
+    

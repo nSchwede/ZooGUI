@@ -1,4 +1,5 @@
-Public class Emperor extends Animal
+public class Emperor extends Animal
 {
+    
     
 }

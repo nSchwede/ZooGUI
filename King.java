@@ -1,4 +1,5 @@
-Public class King extends Animal
+public class King extends Animal 
 {
+   
     
 }

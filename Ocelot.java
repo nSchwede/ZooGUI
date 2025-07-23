@@ -1,4 +1,5 @@
-Public class Ocelot extends Animal
+public class Ocelot extends Animal
 {
+   
 
 }

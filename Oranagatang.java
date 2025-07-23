@@ -1,4 +1,5 @@
-Public class Orangatang extends Animal
+public class Orangatang extends Animal
 {
+    
     
 }

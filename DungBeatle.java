@@ -1,4 +1,5 @@
-Public class DungBeatle extends Animal
+public class DungBeatle extends Animal 
 {
+   
     
 }
