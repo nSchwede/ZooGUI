@@ -20,5 +20,11 @@ public class Baboon extends Animal
     {
         dietBehavior.eat();
     }
+
+    @Override 
+    public String getDescription()
+    {
+        return "";
+    }
     
 }

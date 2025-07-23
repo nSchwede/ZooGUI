@@ -19,5 +19,12 @@ public class King extends Animal
     {
         dietBehavior.eat();
     }
+
+    @Override 
+    public String getDescription()
+    {
+        return "";
+    }
+    
     
 }

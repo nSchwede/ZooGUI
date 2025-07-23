@@ -26,7 +26,7 @@ public abstract class Animal
         dietBehavior.eat();
     }
 
-
+    public abstract String getDescription();
 
 
 }
