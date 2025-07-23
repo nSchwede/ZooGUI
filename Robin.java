@@ -1,6 +1,6 @@
-public class Robbin extends Animal 
+public class Robin extends Animal 
 {
-    public Robbin(DietBehavior dietBehavior, MoveBehavior moveBehavior, SoundBehavior soundBehavior)
+    public Robin(DietBehavior dietBehavior, MoveBehavior moveBehavior, SoundBehavior soundBehavior)
     {
         super(dietBehavior, moveBehavior, soundBehavior);
     }
