@@ -2,9 +2,7 @@ public class Wolf extends Animal
 {
     public Wolf(DietBehavior dietBehavior, MoveBehavior moveBehavior, SoundBehavior soundBehavior)
     {
-        super(dietBehavior);
-        super(moveBehavior);
-        super(soundBehavior);
+        super(dietBehavior, moveBehavior, soundBehavior);
     }
 
     public void performSound()

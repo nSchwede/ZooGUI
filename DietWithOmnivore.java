@@ -1,7 +1,7 @@
 public class DietWithOmnivore implements DietBehavior
 {
     @Override
-    public void performEat()
+    public void eat()
     {
         
     }

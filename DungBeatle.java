@@ -2,9 +2,7 @@ public class DungBeatle extends Animal
 {
    public DungBeatle(DietBehavior dietBehavior, MoveBehavior moveBehavior, SoundBehavior soundBehavior)
     {
-        super(dietBehavior);
-        super(moveBehavior);
-        super(soundBehavior);
+        super(dietBehavior, moveBehavior, soundBehavior);
     }
 
     public void performSound()
