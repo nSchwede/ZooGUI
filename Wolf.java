@@ -20,10 +20,4 @@ public class Wolf extends Animal
         dietBehavior.eat();
     }
 
-    @Override 
-    public String getDescription()
-    {
-        return "";
-    }
-    
 }

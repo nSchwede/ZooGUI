@@ -19,12 +19,6 @@ public class Orangatang extends Animal
     {
         dietBehavior.eat();
     }
-
-    @Override 
-    public String getDescription()
-    {
-        return "";
-    }
     
     
 }

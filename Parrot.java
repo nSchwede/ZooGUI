@@ -20,10 +20,4 @@ public class Parrot extends Animal
         dietBehavior.eat();
     }
     
-    @Override 
-    public String getDescription()
-    {
-        return "";
-    }
-    
 }

@@ -20,10 +20,6 @@ public class Scorpion extends Animal
         dietBehavior.eat();
     }
     
-    @Override 
-    public String getDescription()
-    {
-        return "";
-    }
+
     
 }

@@ -19,12 +19,6 @@ public class Emperor extends Animal
     {
         dietBehavior.eat();
     }
-
-    @Override 
-    public String getDescription()
-    {
-        return "";
-    }
     
     
 }

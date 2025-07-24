@@ -20,11 +20,6 @@ public class DungBeatle extends Animal
         dietBehavior.eat();
     }
 
-    @Override 
-    public String getDescription()
-    {
-        return "";
-    }
     
     
 }
