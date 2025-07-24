@@ -1,5 +1,6 @@
 public class Walk implements MoveBehavior
 {
+    //the walk class overrides the move function that is from the movebehavior interface
     @Override
     public void move()
     {

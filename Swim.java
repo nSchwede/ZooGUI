@@ -1,7 +1,7 @@
 public class Swim implements MoveBehavior
 {
-
-     @Override
+    //the swim class overrides the move function that is from the movebehavior interface
+    @Override
     public void move()
     {
         // This animal moves by swimming

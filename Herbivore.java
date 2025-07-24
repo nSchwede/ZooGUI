@@ -1,5 +1,6 @@
 public class Herbivore implements DietBehavior
 {
+    // This is overriding the DietBehavior to implement the herbivore diet
     @Override
     public void eat()
     {

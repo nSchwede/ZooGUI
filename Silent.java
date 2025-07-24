@@ -1,6 +1,7 @@
 public class Silent implements SoundBehavior
 {
 
+    //The silent class implements the interface soundBehavior to display the sound that this specified animal makes.
     @Override
     public void sound()
     {

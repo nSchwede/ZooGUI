@@ -1,5 +1,6 @@
 public class CreepyLaugh implements SoundBehavior
 {
+    //The creepylaugh class implements the interface soundBehavior to display the sound that this specified animal makes.
     @Override
     public void sound()
     {

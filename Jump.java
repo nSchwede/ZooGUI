@@ -1,5 +1,6 @@
 public class Jump implements MoveBehavior
 {
+    //the jump class overrides the move function that is from the movebehavior interface
     @Override
     public void move()
     {

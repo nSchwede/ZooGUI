@@ -1,5 +1,6 @@
 public class Insectivore implements DietBehavior
 {
+    // This is overriding the DietBehavior to implement the insectivore diet
     @Override
     public void eat()
     {

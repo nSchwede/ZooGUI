@@ -1,5 +1,6 @@
 public class Hiss implements SoundBehavior
 {
+    //The hiss class implements the interface soundBehavior to display the sound that this specified animal makes.
     @Override
     public void sound()
     {
