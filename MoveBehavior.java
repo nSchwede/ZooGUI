@@ -2,7 +2,7 @@
 public interface MoveBehavior
 {
 
-    public void move();
+    public String move();
 
  
 }

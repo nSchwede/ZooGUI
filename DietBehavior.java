@@ -2,6 +2,6 @@
 public interface DietBehavior
 {
 
-    public void eat();
+    public String eat();
    
 }
