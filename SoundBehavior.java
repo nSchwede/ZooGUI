@@ -2,6 +2,6 @@
 public interface SoundBehavior
 {
     
-    public void sound();
+    public string sound();
 
 }
