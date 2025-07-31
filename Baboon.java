@@ -1,25 +1,20 @@
-public class Baboon extends Animal 
-{
-    public Baboon(DietBehavior dietBehavior, MoveBehavior moveBehavior, SoundBehavior soundBehavior)
-    {
+
+public class Baboon extends Animal {
+    public Baboon(DietBehavior dietBehavior, MoveBehavior moveBehavior, SoundBehavior soundBehavior) {
         super(dietBehavior, moveBehavior, soundBehavior);
-       
+
     }
 
-    public void performSound()
-    {
+    public void performSound() {
         soundBehavior.sound();
     }
 
-    public void performMove()
-    {
+    public void performMove() {
         moveBehavior.move();
     }
 
-    public void performEat()
-    {
+    public void performEat() {
         dietBehavior.eat();
     }
 
-    
 }
