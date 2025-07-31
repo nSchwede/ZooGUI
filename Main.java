@@ -24,7 +24,9 @@ public class Main {
         Baboon baboon = new Baboon(herbivore, walk, growl);
 
         // Canines
+        //Todo A wolf woulk more bark
         Wolf wolf = new Wolf(carnivore, walk, growl);
+        // Todo , a hyena has a creepy laugh
         Hyena hyena = new Hyena(carnivore, walk, growl);
 
         // Arachnids
