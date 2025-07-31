@@ -45,5 +45,5 @@ Welcome to **ZooGUI** – a comprehensive Java application that simulates a digi
 
 ---
 
-**Developed by [Your Name]**  
+**Developed by [Riley, Nathan, Liam, Zane]**  
 For more information or to connect,
