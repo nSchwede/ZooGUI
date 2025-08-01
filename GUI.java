@@ -1,13 +1,9 @@
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class GUI {
@@ -109,9 +105,9 @@ public class GUI {
                 fishButton
         };
 
-        for (int i = 0; i < buttonArray.length; i++) {
-            JPanel panel = speciesArray[i];
-            buttonArray[i].addActionListener(
+        for (JButton x : buttonArray) {
+            JPanel panel = speciesArray[java.util.Arrays.asList(buttonArray).indexOf(x)];
+            buttonArray[java.util.Arrays.asList(buttonArray).indexOf(x)].addActionListener(
                     new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                             currPanel = panel;
@@ -122,7 +118,6 @@ public class GUI {
                     });
 
         }
-
         backButton.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -153,6 +148,7 @@ public class GUI {
         centerPanel.add(mainButtonsPanel, BorderLayout.CENTER);
         ZGFrame.add(backButton, BorderLayout.WEST);
         ZGFrame.add(centerPanel, BorderLayout.CENTER);
+
     }
 
     private JPanel make2ButtonPanel(String firstButton, String secondButton, JPanel p1, JPanel p2) {
@@ -164,14 +160,12 @@ public class GUI {
         b1.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        p1.setVisible(true);
                     }
                 });
 
         b2.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        p2.setVisible(true);
                     }
                 });
 
@@ -181,6 +175,46 @@ public class GUI {
         panel.add(b2);
 
         return panel;
+    }
+
+    public JPanel getCurrPanel() {
+        return currPanel;
+    }
+
+    public JPanel getPrevPanel() {
+        return prevPanel;
+    }
+
+    // Create per animal pannels
+    private JPanel makeAnimalPanel(Animal animal) {
+        JPanel animalPanel = getCurrPanel();
+
+        JButton dietButton = new JButton("Diet");
+        dietButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("This animal is a " + animal.getDiet());
+            }
+        });
+
+        JButton movementButton = new JButton("Movement");
+        movementButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("This animal moves by " + animal.getMove());
+            }
+        });
+
+        JButton soundButton = new JButton("Sound");
+        soundButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("This animal says: " + animal.getSound());
+            }
+        });
+
+        animalPanel.add(dietButton);
+        animalPanel.add(movementButton);
+        animalPanel.add(soundButton);
+
+        return animalPanel;
     }
 
 }

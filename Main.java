@@ -1,4 +1,3 @@
-
 public class Main {
     DietBehavior carnivore = new CarnivoreDiet();
     DietBehavior herbivore = new HerbivoreDiet();
@@ -9,6 +8,7 @@ public class Main {
     SoundBehavior roar = new RoarSound();
     SoundBehavior chirp = new ChirpSound();
     SoundBehavior growl = new GrowlSound();
+
     // Bears
     BrownBear brownBear = new BrownBear(herbivore, walk, growl);
     BlackBear blackBear = new BlackBear(omnivore, walk, growl);
@@ -58,23 +58,6 @@ public class Main {
             robin, parrot, emperorPenguin, kingPenguin, snake, komodoDragon,
             salmon, shark
     };
-
-    public static void main(String[] args) {
-        Main main = new Main();
-        // Create GUI object
-        GUI gui = new GUI();
-        // Construct the GUI
-        gui.ConstructGUI();
-        // Demonstrate behaviors for all animals
-        for (Animal animal : main.animals) {
-            animal.performEat();
-            animal.performMove();
-            animal.performSound();
-            System.out.println("Animal: " + animal.getClass().getSimpleName());
-            System.out.println("------------------");
-        }
-
-    }
 
     // implementation to fix compilation error
     class CarnivoreDiet implements DietBehavior {
@@ -138,5 +121,23 @@ public class Main {
         public String sound() {
             return "Growling.";
         }
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of Main to access non-static members
+        Main main = new Main();
+        // Create GUI object
+        GUI gui = new GUI();
+        // Construct the GUI
+        gui.ConstructGUI();
+        // Demonstrate behaviors for all animals
+        for (Animal animal : main.animals) {
+            animal.performEat();
+            animal.performMove();
+            animal.performSound();
+            System.out.println("Animal: " + animal.getClass().getSimpleName());
+            System.out.println("------------------");
+        }
+
     }
 }
