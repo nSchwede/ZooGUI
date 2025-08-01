@@ -12,6 +12,7 @@ public class AnimalContainer {
     DietBehavior herbivore = new HerbivoreDiet();
     DietBehavior omnivore = new OmnivoreDiet();
     MoveBehavior walk = new WalkBehavior();
+    MoveBehavior slither = new SlitherBehavior(); 
     MoveBehavior fly = new FlyBehavior();
     MoveBehavior swim = new SwimBehavior();
     SoundBehavior chirp = new ChirpSound();
@@ -20,6 +21,8 @@ public class AnimalContainer {
     SoundBehavior silent = new SilentSound();
     SoundBehavior howl = new HowlSound();
     SoundBehavior hiss = new HissSound();
+    SoundBehavior creepy = new CreepyLaughSound(); 
+    SoundBehavior hooting = new HootingSound();
     Animal[] animals = null;
 
     public AnimalContainer() {
@@ -32,8 +35,8 @@ public class AnimalContainer {
         Ocelot ocelot = new Ocelot(carnivore, walk, growl);
 
         // Monkeys
-        Orangatang orangutan = new Orangatang(herbivore, walk, howl);
-        Baboon baboon = new Baboon(herbivore, walk, howl);
+        Orangatang orangutan = new Orangatang(herbivore, walk, hooting);
+        Baboon baboon = new Baboon(herbivore, walk, hooting);
 
         // Canines
         // Todo A wolf woulk more bark
@@ -42,7 +45,7 @@ public class AnimalContainer {
 
         // Arachnids
         BlackWidow blackWidow = new BlackWidow(carnivore, walk, silent);
-        Scorpion scorpion = new Scorpion(carnivore, walk, growl);
+        Scorpion scorpion = new Scorpion(carnivore, walk, hiss);
 
         // Insects
         PrayingMantis prayingMantis = new PrayingMantis(carnivore, walk, silent);
@@ -57,7 +60,7 @@ public class AnimalContainer {
         King kingPenguin = new King(carnivore, swim, chirp);
 
         // Reptiles
-        Snake snake = new Snake(carnivore, walk, hiss);
+        Snake snake = new Snake(carnivore, slither, hiss);
         KomodoDragon komodoDragon = new KomodoDragon(carnivore, walk, hiss);
 
         // fish
