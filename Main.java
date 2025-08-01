@@ -4,7 +4,6 @@ import animal.*;
 public class Main {
     // implementation to fix compilation error
     public static AnimalContainer animalContainer = new AnimalContainer();
-
     public static void main(String[] args) {
         GUI gui = new GUI();
         gui.ConstructGUI();
