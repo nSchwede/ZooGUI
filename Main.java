@@ -4,12 +4,18 @@ public class Main {
         DietBehavior carnivore = new CarnivoreDiet();
         DietBehavior herbivore = new HerbivoreDiet();
         DietBehavior omnivore = new OmnivoreDiet();
+        DietBehavior insectivore = new InsectivoreDiet(); 
         MoveBehavior walk = new WalkBehavior();
+        MoveBehavior slither = new SlitherBehavior();
         MoveBehavior fly = new FlyBehavior();
         MoveBehavior swim = new SwimBehavior();
         SoundBehavior roar = new RoarSound();
         SoundBehavior chirp = new ChirpSound();
         SoundBehavior growl = new GrowlSound();
+        SoundBehavior bark = new BarkSound();
+        SoundBehavior creepyLaugh = new CreepyLaughSound(); 
+        SoundBehavoir hiss = new HissSound();
+        SoundBehavior silent = new SilentSound();
 
         // Bears
         BrownBear brownBear = new BrownBear(herbivore, walk, growl);
@@ -25,13 +31,13 @@ public class Main {
 
         // Canines
         //Todo A wolf woulk more bark
-        Wolf wolf = new Wolf(carnivore, walk, growl);
+        Wolf wolf = new Wolf(carnivore, walk, bark);
         // Todo , a hyena has a creepy laugh
-        Hyena hyena = new Hyena(carnivore, walk, growl);
+        Hyena hyena = new Hyena(carnivore, walk, creepyLaugh);
 
         // Arachnids
-        BlackWidow blackWidow = new BlackWidow(carnivore, walk, chirp);
-        Scorpion scorpion = new Scorpion(carnivore, walk, growl);
+        BlackWidow blackWidow = new BlackWidow(insectivore, walk, silent);
+        Scorpion scorpion = new Scorpion(carnivore, walk, hiss);
 
         // Insects
         PrayingMantis prayingMantis = new PrayingMantis(carnivore, walk, chirp);
@@ -46,7 +52,7 @@ public class Main {
         King kingPenguin = new King(carnivore, swim, chirp);
 
         // Reptiles
-        Snake snake = new Snake(carnivore, walk, growl);
+        Snake snake = new Snake(carnivore, slither, hiss);
         KomodoDragon komodoDragon = new KomodoDragon(carnivore, walk, growl);
 
         //fish
