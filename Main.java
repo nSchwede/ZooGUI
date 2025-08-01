@@ -4,14 +4,17 @@ public class Main {
         DietBehavior carnivore = new CarnivoreDiet();
         DietBehavior herbivore = new HerbivoreDiet();
         DietBehavior omnivore = new OmnivoreDiet();
+        // added inscetivore
         DietBehavior insectivore = new InsectivoreDiet(); 
         MoveBehavior walk = new WalkBehavior();
+        //added slither
         MoveBehavior slither = new SlitherBehavior();
         MoveBehavior fly = new FlyBehavior();
         MoveBehavior swim = new SwimBehavior();
         SoundBehavior roar = new RoarSound();
         SoundBehavior chirp = new ChirpSound();
         SoundBehavior growl = new GrowlSound();
+         //added these four sounds
         SoundBehavior bark = new BarkSound();
         SoundBehavior creepyLaugh = new CreepyLaughSound(); 
         SoundBehavoir hiss = new HissSound();
@@ -32,11 +35,13 @@ public class Main {
         // Canines
         //Todo A wolf woulk more bark
         Wolf wolf = new Wolf(carnivore, walk, bark);
-        // Todo , a hyena has a creepy laugh
+        // Todo , a hyena has a creepy laugh, included the creepy laugh
         Hyena hyena = new Hyena(carnivore, walk, creepyLaugh);
 
         // Arachnids
+        // made the spider an insectivore and silent
         BlackWidow blackWidow = new BlackWidow(insectivore, walk, silent);
+        // has a scorpion hiss
         Scorpion scorpion = new Scorpion(carnivore, walk, hiss);
 
         // Insects
@@ -52,6 +57,7 @@ public class Main {
         King kingPenguin = new King(carnivore, swim, chirp);
 
         // Reptiles
+        //snake slithers and hisses now
         Snake snake = new Snake(carnivore, slither, hiss);
         KomodoDragon komodoDragon = new KomodoDragon(carnivore, walk, growl);
 
