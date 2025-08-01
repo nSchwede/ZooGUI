@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.HashMap;
 import java.util.Map;
 import animal.*; // Assuming you have Animal, AnimalContainer, etc.
@@ -17,8 +16,6 @@ public class GUI {
     private CardLayout cardLayout;
 
     private Map<String, JPanel> panelMap = new HashMap<>();
-    private String currPanelName = "MainMenu";
-    private String prevPanelName = null;
 
     public void ConstructGUI() {
         createFrame();
@@ -44,7 +41,7 @@ public class GUI {
         String[][] categories = {
                 { "Brown Bear", "Black Bear" },
                 { "Lion", "Ocelot" },
-                { "Orangutan", "Baboon" },
+                { "Orangutang", "Baboon" },
                 { "Wolf", "Hyena" },
                 { "Black Widow", "Scorpion" },
                 { "Praying Mantis", "Dung Beetle" },
@@ -144,8 +141,6 @@ public class GUI {
     private void switchPanel(String panelName) {
         if (!panelMap.containsKey(panelName))
             return;
-        prevPanelName = currPanelName;
-        currPanelName = panelName;
         cardLayout.show(centerPanel, panelName);
     }
 }

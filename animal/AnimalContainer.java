@@ -6,24 +6,23 @@ import behavior.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import animal.*;
-
 public class AnimalContainer {
 
+    DietBehavior carnivore = new CarnivoreDiet();
+    DietBehavior herbivore = new HerbivoreDiet();
+    DietBehavior omnivore = new OmnivoreDiet();
+    MoveBehavior walk = new WalkBehavior();
+    MoveBehavior fly = new FlyBehavior();
+    MoveBehavior swim = new SwimBehavior();
+    SoundBehavior chirp = new ChirpSound();
+    SoundBehavior growl = new GrowlSound();
+    SoundBehavior roar = new RoarSound();
+    SoundBehavior silent = new SilentSound();
+    SoundBehavior howl = new HowlSound();
+    SoundBehavior hiss = new HissSound();
     Animal[] animals = null;
 
     public AnimalContainer() {
-        // Constructor
-        DietBehavior carnivore = new CarnivoreDiet();
-        DietBehavior herbivore = new HerbivoreDiet();
-        DietBehavior omnivore = new OmnivoreDiet();
-        MoveBehavior walk = new WalkBehavior();
-        MoveBehavior fly = new FlyBehavior();
-        MoveBehavior swim = new SwimBehavior();
-        SoundBehavior chirp = new ChirpSound();
-        SoundBehavior growl = new GrowlSound();
-        SoundBehavior roar = new RoarSound();
-
         // Bears
         Animal brownBear = new BrownBear(herbivore, walk, growl);
         Animal blackBear = new BlackBear(omnivore, walk, growl);
@@ -33,21 +32,21 @@ public class AnimalContainer {
         Ocelot ocelot = new Ocelot(carnivore, walk, growl);
 
         // Monkeys
-        Orangatang orangutan = new Orangatang(herbivore, walk, chirp);
-        Baboon baboon = new Baboon(herbivore, walk, growl);
+        Orangatang orangutan = new Orangatang(herbivore, walk, howl);
+        Baboon baboon = new Baboon(herbivore, walk, howl);
 
         // Canines
         // Todo A wolf woulk more bark
-        Wolf wolf = new Wolf(carnivore, walk, growl);
+        Wolf wolf = new Wolf(carnivore, walk, howl);
         Hyena hyena = new Hyena(carnivore, walk, growl);
 
         // Arachnids
-        BlackWidow blackWidow = new BlackWidow(carnivore, walk, chirp);
+        BlackWidow blackWidow = new BlackWidow(carnivore, walk, silent);
         Scorpion scorpion = new Scorpion(carnivore, walk, growl);
 
         // Insects
-        PrayingMantis prayingMantis = new PrayingMantis(carnivore, walk, chirp);
-        DungBeatle dungBeetle = new DungBeatle(herbivore, walk, growl);
+        PrayingMantis prayingMantis = new PrayingMantis(carnivore, walk, silent);
+        DungBeatle dungBeetle = new DungBeatle(herbivore, walk, silent);
 
         // Birds
         Robin robin = new Robin(herbivore, fly, chirp);
@@ -58,12 +57,12 @@ public class AnimalContainer {
         King kingPenguin = new King(carnivore, swim, chirp);
 
         // Reptiles
-        Snake snake = new Snake(carnivore, walk, growl);
-        KomodoDragon komodoDragon = new KomodoDragon(carnivore, walk, growl);
+        Snake snake = new Snake(carnivore, walk, hiss);
+        KomodoDragon komodoDragon = new KomodoDragon(carnivore, walk, hiss);
 
         // fish
-        Salmon salmon = new Salmon(herbivore, swim, chirp);
-        Shark shark = new Shark(carnivore, swim, growl);
+        Salmon salmon = new Salmon(herbivore, swim, silent);
+        Shark shark = new Shark(carnivore, swim, silent);
 
         // Create an array of all animals
         Animal[] animalList = {
