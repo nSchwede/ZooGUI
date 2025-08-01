@@ -1,5 +1,8 @@
 package animals;
 
+import behavior.*;
+import animal.*;
+
 public class BlackWidow extends Animal {
     public BlackWidow(DietBehavior dietBehavior, MoveBehavior moveBehavior, SoundBehavior soundBehavior) {
         super(dietBehavior, moveBehavior, soundBehavior);

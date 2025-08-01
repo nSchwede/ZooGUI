@@ -52,7 +52,7 @@ public class GUI {
         // tertiary panels
         Map<String, Animal> animalMap = new HashMap<>();
 
-        animalMap.put("Brown Bear", getBrownBear());
+        animalMap.put("Brown Bear", );
         animalMap.put("Black Bear", blackBear);
         animalMap.put("Lion", lion);
         animalMap.put("Ocelot", ocelot);

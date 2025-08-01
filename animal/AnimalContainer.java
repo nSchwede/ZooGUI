@@ -1,13 +1,10 @@
 package animal;
 
+import animals.*;
 import behavior.*;
+import animal.*;
 
 public class AnimalContainer {
-    public Animal brownBear, blackBear, lion, ocelot;
-    public Animal orangutang, baboon, wolf, hyena;
-    public Animal blackWidow, scorpion, mantis, dungBeetle;
-    public Animal robin, parrot, emperor, king;
-    public Animal snake, komodoDragon, salmon, shark;
 
     public AnimalContainer() {
         // Constructor
@@ -17,13 +14,13 @@ public class AnimalContainer {
         MoveBehavior walk = new WalkBehavior();
         MoveBehavior fly = new FlyBehavior();
         MoveBehavior swim = new SwimBehavior();
-        SoundBehavior roar = new RoarSound();
         SoundBehavior chirp = new ChirpSound();
         SoundBehavior growl = new GrowlSound();
+        SoundBehavior roar = new RoarSound();
 
         // Bears
-        BrownBear brownBear = new BrownBear(herbivore, walk, growl);
-        BlackBear blackBear = new BlackBear(omnivore, walk, growl);
+        Animal brownBear = new BrownBear(herbivore, walk, growl);
+        Animal blackBear = new BlackBear(omnivore, walk, growl);
 
         // Felines
         Lion lion = new Lion(carnivore, walk, roar);
@@ -66,8 +63,8 @@ public class AnimalContainer {
         Animal[] animals = {
                 brownBear, blackBear, lion, ocelot, orangutan, baboon,
                 wolf, hyena, blackWidow, scorpion, prayingMantis, dungBeetle,
-                robin, parrot, emperorPenguin, kingPenguin, snake, komodoDragon,
-                salmon, shark
+                robin, parrot, emperorPenguin, kingPenguin, snake,
+                komodoDragon, salmon, shark
         };
     }
 

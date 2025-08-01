@@ -4,6 +4,7 @@ import behavior.*;
 
 public class Main {
     // implementation to fix compilation error
+    public static AnimalContainer animalContainer = new AnimalContainer();
 
     public static void main(String[] args) {
         // Create an instance of Main to access non-static members
@@ -12,7 +13,7 @@ public class Main {
         // Construct the GUI
         gui.ConstructGUI();
         // Demonstrate behaviors for all animals
-        for (Animal animal : animals) {
+        for (Animal animal : animalContainer.animals) {
             animal.performEat();
             animal.performMove();
             animal.performSound();

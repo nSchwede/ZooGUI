@@ -1,5 +1,8 @@
 package animals;
 
+import behavior.*;
+import animal.*;
+
 public class Emperor extends Animal {
     public Emperor(DietBehavior dietBehavior, MoveBehavior moveBehavior, SoundBehavior soundBehavior) {
         super(dietBehavior, moveBehavior, soundBehavior);
