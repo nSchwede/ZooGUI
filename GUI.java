@@ -1,12 +1,18 @@
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 import java.awt.event.ActionEvent;
+import animal.*;
+import behavior.*;
 
 public class GUI {
+
     public final int LOCX = 800;
     public final int LOCY = 400;
     public final int HEIGHT = 300;
@@ -35,7 +41,7 @@ public class GUI {
     }
 
     // sets up the main menu where all the main species select is
-    private void menuInit() {
+    public void menuInit() {
 
         // structurtal panels
         JPanel centerPanel = new JPanel();
@@ -44,38 +50,40 @@ public class GUI {
         currPanel = mainButtonsPanel;
 
         // tertiary panels
-        JPanel brownBearPanel = new JPanel();
-        JPanel blackBearPanel = new JPanel();
-        JPanel lionPanel = new JPanel();
-        JPanel ocelotPanel = new JPanel();
-        JPanel orangPanel = new JPanel();
-        JPanel baboonPanel = new JPanel();
-        JPanel wolfPanel = new JPanel();
-        JPanel hyenaPanel = new JPanel();
-        JPanel widowPanel = new JPanel();
-        JPanel scorpionPanel = new JPanel();
-        JPanel mantisPanel = new JPanel();
-        JPanel dungPanel = new JPanel();
-        JPanel robinPanel = new JPanel();
-        JPanel parrotPanel = new JPanel();
-        JPanel empPanel = new JPanel();
-        JPanel kingPanel = new JPanel();
-        JPanel snakePanel = new JPanel();
-        JPanel dragonPanel = new JPanel();
-        JPanel salmonPanel = new JPanel();
-        JPanel sharkPanel = new JPanel();
+        Map<String, Animal> animalMap = new HashMap<>();
+
+        animalMap.put("Brown Bear", getBrownBear());
+        animalMap.put("Black Bear", blackBear);
+        animalMap.put("Lion", lion);
+        animalMap.put("Ocelot", ocelot);
+        animalMap.put("Orangutang", orangutang);
+        animalMap.put("Baboon", baboon);
+        animalMap.put("Wolf", wolf);
+        animalMap.put("Hyena", hyena);
+        animalMap.put("Black Widow", blackWidow);
+        animalMap.put("Scorpion", scorpion);
+        animalMap.put("Praying Mantis", mantis);
+        animalMap.put("Dung Beetle", dungBeetle);
+        animalMap.put("Robin", robin);
+        animalMap.put("Parrot", parrot);
+        animalMap.put("Emperor", emperor);
+        animalMap.put("King", king);
+        animalMap.put("Snake", snake);
+        animalMap.put("Komodo Dragon", komodo);
+        animalMap.put("Salmon", salmon);
+        animalMap.put("Shark", shark);
 
         // secondary menu panels
-        JPanel bearPanel = make2ButtonPanel("Brown Bear", "Black Bear", brownBearPanel, blackBearPanel);
-        JPanel felinePanel = make2ButtonPanel("Lion", "Ocelot", lionPanel, ocelotPanel);
-        JPanel monkeyPanel = make2ButtonPanel("Oragutang", "Baboon", orangPanel, baboonPanel);
-        JPanel caninePanel = make2ButtonPanel("Wolf", "Hyena", wolfPanel, hyenaPanel);
-        JPanel arachPanel = make2ButtonPanel("Black Widow", "Scorpion", widowPanel, scorpionPanel);
-        JPanel insectPanel = make2ButtonPanel("Praying Mantis", "Dung Beetle", mantisPanel, dungPanel);
-        JPanel birdPanel = make2ButtonPanel("Robin", "Parrot", robinPanel, parrotPanel);
-        JPanel penguinPanel = make2ButtonPanel("Emperor", "King", empPanel, kingPanel);
-        JPanel reptilePanel = make2ButtonPanel("Snake", "Komodo Dragon", snakePanel, dragonPanel);
-        JPanel fishPanel = make2ButtonPanel("Salmon", "Shark", salmonPanel, sharkPanel);
+        JPanel bearPanel = make2ButtonPanel("Brown Bear", "Black Bear");
+        JPanel felinePanel = make2ButtonPanel("Lion", "Ocelot");
+        JPanel monkeyPanel = make2ButtonPanel("Oragutang", "Baboon");
+        JPanel caninePanel = make2ButtonPanel("Wolf", "Hyena");
+        JPanel arachPanel = make2ButtonPanel("Black Widow", "Scorpion");
+        JPanel insectPanel = make2ButtonPanel("Praying Mantis", "Dung Beetle");
+        JPanel birdPanel = make2ButtonPanel("Robin", "Parrot");
+        JPanel penguinPanel = make2ButtonPanel("Emperor", "King");
+        JPanel reptilePanel = make2ButtonPanel("Snake", "Komodo Dragon");
+        JPanel fishPanel = make2ButtonPanel("Salmon", "Shark");
 
         JPanel[] speciesArray = { bearPanel, felinePanel, monkeyPanel, caninePanel, arachPanel, insectPanel, birdPanel,
                 penguinPanel, reptilePanel, fishPanel };
@@ -151,7 +159,7 @@ public class GUI {
 
     }
 
-    private JPanel make2ButtonPanel(String firstButton, String secondButton, JPanel p1, JPanel p2) {
+    private JPanel make2ButtonPanel(String firstButton, String secondButton) {
         JPanel panel = new JPanel();
 
         JButton b1 = new JButton(firstButton);
