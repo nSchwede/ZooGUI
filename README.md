@@ -21,7 +21,7 @@ Welcome to **ZooGUI** – a comprehensive Java application that simulates a digi
    `git clone https://github.com/yourusername/ZooGUI.git`
 2. **Open the project** in your preferred Java IDE (e.g., VS Code, IntelliJ IDEA).
 3. **Compile and run `Main.java`.**
-4. **(If GUI is implemented):** Launch the GUI to explore and interact with the zoo.
+4. **Compile and run `GUI.java`.** Launch the GUI to explore and interact with the zoo.
 
 ## Animal Roster
 
