@@ -5,4 +5,10 @@ public class ChirpSound implements SoundBehavior {
     public String sound() {
         return "Chirping.";
     }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Chirp Chirp";
+    }
 }

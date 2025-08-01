@@ -5,4 +5,10 @@ public class SwimBehavior implements MoveBehavior {
     public String move() {
         return "Swimming.";
     }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Swimming";
+    }
 }

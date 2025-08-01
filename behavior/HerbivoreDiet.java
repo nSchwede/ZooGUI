@@ -5,4 +5,10 @@ public class HerbivoreDiet implements DietBehavior {
     public String eat() {
         return "Eating plants.";
     }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Eating plants.";
+    }
 }

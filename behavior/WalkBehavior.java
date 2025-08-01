@@ -5,4 +5,10 @@ public class WalkBehavior implements MoveBehavior {
     public String move() {
         return "Walking.";
     }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Walking";
+    }
 }

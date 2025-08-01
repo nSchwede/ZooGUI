@@ -25,4 +25,16 @@ public class Animal {
         dietBehavior.eat();
     }
 
+    public DietBehavior getDietBehavior() {
+        return dietBehavior;
+    }
+
+    public MoveBehavior getMoveBehavior() {
+        return moveBehavior;
+    }
+
+    public SoundBehavior getSoundBehavior() {
+        return soundBehavior;
+    }
+
 }

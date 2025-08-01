@@ -5,4 +5,10 @@ public class FlyBehavior implements MoveBehavior {
     public String move() {
         return "Flying.";
     }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Flying";
+    }
 }

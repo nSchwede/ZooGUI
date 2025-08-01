@@ -12,13 +12,14 @@ public class Main {
         GUI gui = new GUI();
         // Construct the GUI
         gui.ConstructGUI();
+        animalContainer.getAnimalMap();
         // Demonstrate behaviors for all animals
-        for (Animal animal : animalContainer.animals) {
-            animal.performEat();
-            animal.performMove();
-            animal.performSound();
+        for (Animal animal : animalContainer.getAnimalMap().values()) {
             System.out.println("Animal: " + animal.getClass().getSimpleName());
-            System.out.println("------------------");
+            animal.performSound();
+            animal.performMove();
+            animal.performEat();
+            System.out.println();
         }
 
     }

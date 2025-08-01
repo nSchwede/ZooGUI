@@ -5,4 +5,10 @@ public class GrowlSound implements SoundBehavior {
     public String sound() {
         return "Growling.";
     }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Grrrrrrr";
+    }
 }

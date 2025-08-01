@@ -8,4 +8,9 @@ public class RoarSound implements SoundBehavior {
         return "Roaring.";
     }
 
+    @Override
+    public String toString() {
+        return "ROAR";
+    }
+
 }

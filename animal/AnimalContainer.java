@@ -2,9 +2,15 @@ package animal;
 
 import animals.*;
 import behavior.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import animal.*;
 
 public class AnimalContainer {
+
+    Animal[] animals = null;
 
     public AnimalContainer() {
         // Constructor
@@ -60,12 +66,50 @@ public class AnimalContainer {
         Shark shark = new Shark(carnivore, swim, growl);
 
         // Create an array of all animals
-        Animal[] animals = {
+        Animal[] animalList = {
                 brownBear, blackBear, lion, ocelot, orangutan, baboon,
                 wolf, hyena, blackWidow, scorpion, prayingMantis, dungBeetle,
                 robin, parrot, emperorPenguin, kingPenguin, snake,
                 komodoDragon, salmon, shark
         };
+
+        // Assign the array to the instance variable
+        this.animals = animalList;
+
+    }
+
+    public Map<String, Animal> getAnimalMap() {
+        AnimalContainer container = new AnimalContainer();
+        Map<String, Animal> animalMap = new HashMap<>();
+
+        String[] names = {
+                "Brown Bear", "Black Bear", "Lion", "Ocelot", "Orangutang", "Baboon",
+                "Wolf", "Hyena", "Black Widow", "Scorpion", "Praying Mantis", "Dung Beetle",
+                "Robin", "Parrot", "Emperor Penguin", "King Penguin", "Snake", "Komodo Dragon",
+                "Salmon", "Shark"
+        };
+
+        for (int i = 0; i < names.length; i++) {
+            animalMap.put(names[i], container.getAnimal(i));
+        }
+
+        return animalMap;
+    }
+
+    public Animal getAnimal(String name) {
+        // Getter method to return the array of animals
+
+        return getAnimalMap().get(name);
+
+    }
+
+    public Animal getAnimal(int index) {
+        // Getter method to return a specific animal by index
+        if (index >= 0 && index <= animals.length) {
+            return animals[index];
+        } else {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
     }
 
 }

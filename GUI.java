@@ -1,15 +1,9 @@
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.HashMap;
 import java.util.Map;
-import java.awt.event.ActionEvent;
-import animal.*;
-import behavior.*;
+import animal.*; // Assuming you have Animal, AnimalContainer, etc.
 
 public class GUI {
 
@@ -19,204 +13,126 @@ public class GUI {
     public final int WIDTH = 300;
 
     private JFrame ZGFrame;
-    private JPanel currPanel = null;
-    private JPanel prevPanel = null;
+    private JPanel centerPanel;
+    private CardLayout cardLayout;
 
-    // constructor for the GUI
+    private Map<String, JPanel> panelMap = new HashMap<>();
+    private String currPanelName = "MainMenu";
+    private String prevPanelName = null;
+
     public void ConstructGUI() {
         createFrame();
         menuInit();
         ZGFrame.setVisible(true);
     }
 
-    // creates athe window
     private void createFrame() {
         ZGFrame = new JFrame();
         ZGFrame.setLocation(LOCX, LOCY);
         ZGFrame.setSize(HEIGHT, WIDTH);
         ZGFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ZGFrame.setTitle("Zoo");
-
-        // ZGFrame.setVisible(true);
+        cardLayout = new CardLayout();
+        centerPanel = new JPanel(cardLayout);
+        ZGFrame.add(centerPanel, BorderLayout.CENTER);
     }
 
-    // sets up the main menu where all the main species select is
     public void menuInit() {
+        JPanel mainButtonsPanel = new JPanel(new GridLayout(5, 2, 10, 10));
+        panelMap.put("MainMenu", mainButtonsPanel);
 
-        // structurtal panels
-        JPanel centerPanel = new JPanel();
-        JPanel mainButtonsPanel = new JPanel();
-
-        currPanel = mainButtonsPanel;
-
-        // tertiary panels
-        Map<String, Animal> animalMap = new HashMap<>();
-
-        animalMap.put("Brown Bear", );
-        animalMap.put("Black Bear", blackBear);
-        animalMap.put("Lion", lion);
-        animalMap.put("Ocelot", ocelot);
-        animalMap.put("Orangutang", orangutang);
-        animalMap.put("Baboon", baboon);
-        animalMap.put("Wolf", wolf);
-        animalMap.put("Hyena", hyena);
-        animalMap.put("Black Widow", blackWidow);
-        animalMap.put("Scorpion", scorpion);
-        animalMap.put("Praying Mantis", mantis);
-        animalMap.put("Dung Beetle", dungBeetle);
-        animalMap.put("Robin", robin);
-        animalMap.put("Parrot", parrot);
-        animalMap.put("Emperor", emperor);
-        animalMap.put("King", king);
-        animalMap.put("Snake", snake);
-        animalMap.put("Komodo Dragon", komodo);
-        animalMap.put("Salmon", salmon);
-        animalMap.put("Shark", shark);
-
-        // secondary menu panels
-        JPanel bearPanel = make2ButtonPanel("Brown Bear", "Black Bear");
-        JPanel felinePanel = make2ButtonPanel("Lion", "Ocelot");
-        JPanel monkeyPanel = make2ButtonPanel("Oragutang", "Baboon");
-        JPanel caninePanel = make2ButtonPanel("Wolf", "Hyena");
-        JPanel arachPanel = make2ButtonPanel("Black Widow", "Scorpion");
-        JPanel insectPanel = make2ButtonPanel("Praying Mantis", "Dung Beetle");
-        JPanel birdPanel = make2ButtonPanel("Robin", "Parrot");
-        JPanel penguinPanel = make2ButtonPanel("Emperor", "King");
-        JPanel reptilePanel = make2ButtonPanel("Snake", "Komodo Dragon");
-        JPanel fishPanel = make2ButtonPanel("Salmon", "Shark");
-
-        JPanel[] speciesArray = { bearPanel, felinePanel, monkeyPanel, caninePanel, arachPanel, insectPanel, birdPanel,
-                penguinPanel, reptilePanel, fishPanel };
-
-        JButton bearButton = new JButton("Bears");
-        JButton felineButton = new JButton("Felines");
-        JButton monkeyButton = new JButton("Monkeys");
-        JButton canineButton = new JButton("Canines");
-        JButton arachnidButton = new JButton("Arachnids");
-        JButton insectsButton = new JButton("Insects");
-        JButton birdsButton = new JButton("Birds");
-        JButton penguinsButton = new JButton("Penguins");
-        JButton reptilesButton = new JButton("Reptiles");
-        JButton fishButton = new JButton("Fish");
-
-        JButton backButton = new JButton("Back");
-
-        JButton[] buttonArray = { bearButton,
-                felineButton,
-                monkeyButton,
-                canineButton,
-                arachnidButton,
-                insectsButton,
-                birdsButton,
-                penguinsButton,
-                reptilesButton,
-                fishButton
+        String[][] categories = {
+                { "Brown Bear", "Black Bear" },
+                { "Lion", "Ocelot" },
+                { "Orangutan", "Baboon" },
+                { "Wolf", "Hyena" },
+                { "Black Widow", "Scorpion" },
+                { "Praying Mantis", "Dung Beetle" },
+                { "Robin", "Parrot" },
+                { "Emperor Penguin", "King Penguin" },
+                { "Snake", "Komodo Dragon" },
+                { "Salmon", "Shark" }
         };
 
-        for (JButton x : buttonArray) {
-            JPanel panel = speciesArray[java.util.Arrays.asList(buttonArray).indexOf(x)];
-            buttonArray[java.util.Arrays.asList(buttonArray).indexOf(x)].addActionListener(
-                    new ActionListener() {
-                        public void actionPerformed(ActionEvent e) {
-                            currPanel = panel;
-                            prevPanel = mainButtonsPanel;
-                            mainButtonsPanel.setVisible(false);
-                            currPanel.setVisible(true);
-                        }
-                    });
+        String[] categoryNames = {
+                "Bears", "Felines", "Monkeys", "Canines", "Arachnids",
+                "Insects", "Birds", "Penguins", "Reptiles", "Fish"
+        };
 
-        }
-        backButton.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        if (prevPanel != null) {
-                            currPanel.setVisible(false);
-                            currPanel = prevPanel;
-                            if (prevPanel != mainButtonsPanel) {
-                                prevPanel = mainButtonsPanel;
-                                prevPanel.setVisible(true);
-                            }
-                            prevPanel.setVisible(true);
-                            prevPanel = null;
-                        }
-                    }
-                });
+        for (int i = 0; i < categoryNames.length; i++) {
+            String panelName = categoryNames[i];
+            JPanel animalPanel = make2ButtonPanel(categories[i][0], categories[i][1]);
+            panelMap.put(panelName, animalPanel);
+            centerPanel.add(animalPanel, panelName);
 
-        mainButtonsPanel.setLayout(new GridLayout(5, 2, 10, 10));
-
-        for (int i = 0; i < buttonArray.length; i++) {
-            mainButtonsPanel.add(buttonArray[i]);
+            JButton button = new JButton(panelName);
+            button.addActionListener(e -> switchPanel(panelName));
+            mainButtonsPanel.add(button);
         }
 
-        for (int i = 0; i < speciesArray.length; i++) {
-            centerPanel.add(speciesArray[i]);
-            speciesArray[i].setVisible(false);
-        }
+        centerPanel.add(mainButtonsPanel, "MainMenu");
 
-        centerPanel.add(mainButtonsPanel, BorderLayout.CENTER);
-        ZGFrame.add(backButton, BorderLayout.WEST);
-        ZGFrame.add(centerPanel, BorderLayout.CENTER);
+        JButton backButton = new JButton("Back");
+        backButton.addActionListener(e -> {
+            switchPanel("MainMenu");
+        });
 
+        ZGFrame.add(backButton, BorderLayout.SOUTH);
+        cardLayout.show(centerPanel, "MainMenu");
     }
 
-    private JPanel make2ButtonPanel(String firstButton, String secondButton) {
-        JPanel panel = new JPanel();
+    private JPanel make2ButtonPanel(String firstAnimal, String secondAnimal) {
+        JPanel panel = new JPanel(new GridLayout(5, 2, 10, 10));
 
-        JButton b1 = new JButton(firstButton);
-        JButton b2 = new JButton(secondButton);
+        JButton b1 = new JButton(firstAnimal);
+        JButton b2 = new JButton(secondAnimal);
 
-        b1.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                    }
-                });
+        b1.addActionListener(e -> {
+            Animal animal = new AnimalContainer().getAnimal(firstAnimal);
+            JPanel animalPanel = makeAnimalPanel(animal);
+            String name = "Animal_" + firstAnimal;
+            panelMap.put(name, animalPanel);
+            centerPanel.add(animalPanel, name);
+            switchPanel(name);
+        });
 
-        b2.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                    }
-                });
-
-        panel.setLayout(new GridLayout(5, 2, 10, 10));
+        b2.addActionListener(e -> {
+            Animal animal = new AnimalContainer().getAnimal(secondAnimal);
+            JPanel animalPanel = makeAnimalPanel(animal);
+            String name = "Animal_" + secondAnimal;
+            panelMap.put(name, animalPanel);
+            centerPanel.add(animalPanel, name);
+            switchPanel(name);
+        });
 
         panel.add(b1);
         panel.add(b2);
-
         return panel;
     }
 
-    public JPanel getCurrPanel() {
-        return currPanel;
-    }
-
-    public JPanel getPrevPanel() {
-        return prevPanel;
-    }
-
-    // Create per animal pannels
     private JPanel makeAnimalPanel(Animal animal) {
-        JPanel animalPanel = getCurrPanel();
+        JPanel animalPanel = new JPanel(new GridLayout(3, 1, 10, 10));
 
         JButton dietButton = new JButton("Diet");
-        dietButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("This animal is a " + animal.getDiet());
-            }
-        });
+        dietButton.addActionListener(e -> JOptionPane.showMessageDialog(
+                ZGFrame,
+                "This animal is a " + animal.getDietBehavior(),
+                "Diet Information",
+                JOptionPane.INFORMATION_MESSAGE));
 
         JButton movementButton = new JButton("Movement");
-        movementButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("This animal moves by " + animal.getMove());
-            }
-        });
+        movementButton.addActionListener(e -> JOptionPane.showMessageDialog(
+                ZGFrame,
+                "This animal moves by " + animal.getMoveBehavior(),
+                "Movement Information",
+                JOptionPane.INFORMATION_MESSAGE));
 
         JButton soundButton = new JButton("Sound");
-        soundButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("This animal says: " + animal.getSound());
-            }
-        });
+        soundButton.addActionListener(e -> JOptionPane.showMessageDialog(
+                ZGFrame,
+                "This animal says: " + animal.getSoundBehavior(),
+                "Sound Information",
+                JOptionPane.INFORMATION_MESSAGE));
 
         animalPanel.add(dietButton);
         animalPanel.add(movementButton);
@@ -225,4 +141,11 @@ public class GUI {
         return animalPanel;
     }
 
+    private void switchPanel(String panelName) {
+        if (!panelMap.containsKey(panelName))
+            return;
+        prevPanelName = currPanelName;
+        currPanelName = panelName;
+        cardLayout.show(centerPanel, panelName);
+    }
 }
